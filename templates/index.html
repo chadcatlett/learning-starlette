@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<table class="table-auto">
+    <thead>
+    <tr>
+        <th>Card</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Rarity</th>
+        <th>Set</th>
+        <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for card in cards %}
+      <tr>
+            <td><img src="{{ card.ImageURL }}"</td>
+            <td>{{ card.Name }}</td>
+            <td>{{ card.Type }}</td>
+            <td>{{ card.Rarity }}</td>
+            <td>{{ card.Set }}</td>
+            <td>{{ card.Class }}</td>
+            <td>{{ card.Class }}</td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
