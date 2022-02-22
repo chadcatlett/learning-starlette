@@ -1,9 +1,19 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, td {
+            border: 1px solid #333;
+            text-align: center;
+        }
+        thead,
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,20 +27,19 @@
         <th>Set</th>
         <th>Class</th>
     </tr>
-  </thead>
-  <tbody>
-  {% for card in cards %}
-      <tr>
-            <td><img src="{{ card.ImageURL }}"</td>
+    </thead>
+    <tbody>
+    {% for card in cards %}
+        <tr id="{{ card.Id }}">
+            <td><img src="{{ card.ImageURL }}"></td>
             <td>{{ card.Name }}</td>
             <td>{{ card.Type }}</td>
             <td>{{ card.Rarity }}</td>
             <td>{{ card.Set }}</td>
-            <td>{{ card.Class }}</td>
-            <td>{{ card.Class }}</td>
-      </tr>
-  {% endfor %}
-  </tbody>
+            <td>{{ card.Classes }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
 </table>
 </body>
 </html>
